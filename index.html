@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedClaims — Decentralized Verifiable Claims on ATProto</title>
+  <meta name="description" content="LinkedClaims: publish and verify decentralized claims about any URI-addressable subject on the AT Protocol. Open standard by DIF Labs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>LinkedClaims</h1>
+      <p class="tagline">Decentralized verifiable claims on the AT Protocol</p>
+      <p class="description">
+        Publish <span class="accent">signed claims</span> about any URI-addressable subject &mdash;
+        people, websites, credentials, or other claims &mdash; and let anyone verify them.
+        Built on the <span class="accent">AT Protocol</span>, no central authority required.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is LinkedClaims -->
+  <section class="about">
+    <div class="container">
+      <h2>What is LinkedClaims?</h2>
+      <p>
+        LinkedClaims is an open specification from
+        <a href="https://identity.foundation/" target="_blank" rel="noopener">DIF Labs</a>
+        for making verifiable claims about any URI-addressable subject. A claim can be about
+        a website, a person (identified by a DID), a credential, or even another claim &mdash;
+        enabling a <strong>web of trust</strong> where endorsements, disputes, and ratings
+        layer on top of each other.
+      </p>
+      <p>
+        Claims are published as records on the
+        <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
+        using the <code>com.linkedclaims.claim</code> lexicon. Every claim gets a persistent URI,
+        is signed by the publisher's ATProto identity, and is readable by anyone via the
+        public API &mdash; no backend or special access required.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section>
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Claims About Claims</h3>
+          <p>Any claim can be the subject of another claim. Endorse, dispute, rate, or supersede existing claims to build a layered web of trust.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Multiple Signing Methods</h3>
+          <p>Claims can carry embedded proofs from MetaMask, Ed25519, JWS, or any signature suite &mdash; published on ATProto while preserving the original signer identity.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Evidence Support</h3>
+          <p>Attach photos, videos, documents, or links as evidence. Each item can include a content hash for integrity verification.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Confidence &amp; Ratings</h3>
+          <p>Express how confident you are (0&ndash;1) or give a star rating (1&ndash;5). Aspect tags let you rate specific dimensions like quality or reliability.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Persistent URIs</h3>
+          <p>Every claim has a stable <code>claimUri</code> that can be referenced from any system. Claims flow on ATProto but are not exclusive to it.</p>
+        </div>
+        <div class="feature-card">
+          <h3>No Backend Required</h3>
+          <p>Read claims directly from the ATProto public API. Embed the web component on any page &mdash; it works with zero server-side infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lexicon Schema -->
+  <section class="lexicon-section">
+    <div class="container">
+      <h2>Lexicon Schema</h2>
+      <p>The <code>com.linkedclaims.claim</code> lexicon defines the structure of every claim record on ATProto.</p>
+      <button class="lexicon-toggle" id="lexicon-toggle" aria-expanded="false" aria-controls="lexicon-code">
+        <span class="arrow">&#9654;</span>
+        View full lexicon schema
+      </button>
+      <div class="lexicon-code" id="lexicon-code" role="region">
+        <pre id="lexicon-pre">Loading&hellip;</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Claims Feed -->
+  <section class="feed-section">
+    <div class="container">
+      <h2>Live Claims Feed</h2>
+      <p>Real claims from the LinkedClaims ATProto repository, loaded directly from the public API.</p>
+      <linked-claims-atproto
+        repo="did:plc:xztctnvt5ycnsippd3orwqk7"
+        subject="*"
+        limit="20"
+      ></linked-claims-atproto>
+    </div>
+  </section>
+
+  <!-- Get Started / Resources -->
+  <section>
+    <div class="container">
+      <h2>Get Started</h2>
+      <div class="resources-grid">
+        <a class="resource-link" href="https://github.com/nicholasgasior/claim-atproto" target="_blank" rel="noopener">
+          <div class="label">claim-atproto SDK</div>
+          <div class="desc">TypeScript SDK for publishing and reading LinkedClaims on ATProto.</div>
+        </a>
+        <a class="resource-link" href="https://www.npmjs.com/package/claim-atproto" target="_blank" rel="noopener">
+          <div class="label">npm: claim-atproto</div>
+          <div class="desc">Install with <code>npm i claim-atproto</code> and start publishing claims.</div>
+        </a>
+        <a class="resource-link" href="https://live.linkedtrust.us" target="_blank" rel="noopener">
+          <div class="label">LinkedTrust</div>
+          <div class="desc">Web app for browsing and creating claims with a visual interface.</div>
+        </a>
+        <a class="resource-link" href="https://identity.foundation/labs-linkedclaims/" target="_blank" rel="noopener">
+          <div class="label">DIF Labs Spec</div>
+          <div class="desc">The LinkedClaims specification from the Decentralized Identity Foundation.</div>
+        </a>
+      </div>
+
+      <div class="dns-info">
+        <h3>ATProto Domain Verification</h3>
+        <p>To verify <strong>linkedclaims.com</strong> as the handle for the LinkedClaims ATProto account, set this DNS TXT record:</p>
+        <code>_atproto.linkedclaims.com. IN TXT "did=did:plc:xztctnvt5ycnsippd3orwqk7"</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="links">
+        <a href="https://github.com/nicholasgasior/claim-atproto" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/claim-atproto" target="_blank" rel="noopener">npm</a>
+        <a href="https://live.linkedtrust.us" target="_blank" rel="noopener">LinkedTrust</a>
+        <a href="https://identity.foundation/labs-linkedclaims/" target="_blank" rel="noopener">DIF Labs Spec</a>
+        <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
+      </div>
+      <p>&copy; 2025 LinkedClaims contributors. Open source under MIT license.</p>
+    </div>
+  </footer>
+
+  <!-- Web Component -->
+  <script src="js/atproto-claims.js"></script>
+
+  <!-- Lexicon display -->
+  <script>
+    (function () {
+      var toggle = document.getElementById('lexicon-toggle');
+      var codeBlock = document.getElementById('lexicon-code');
+      var pre = document.getElementById('lexicon-pre');
+      var loaded = false;
+
+      toggle.addEventListener('click', function () {
+        var open = codeBlock.classList.toggle('visible');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open);
+        if (open && !loaded) {
+          loadLexicon();
+        }
+      });
+
+      function loadLexicon() {
+        fetch('lexicon/com-linkedclaims-claim.json')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            pre.innerHTML = highlightJSON(JSON.stringify(data, null, 2));
+            loaded = true;
+          })
+          .catch(function () {
+            pre.textContent = 'Failed to load lexicon schema.';
+          });
+      }
+
+      function highlightJSON(json) {
+        return json.replace(
+          /("(?:\\.|[^"\\])*")\s*:/g,
+          '<span class="json-key">$1</span>:'
+        ).replace(
+          /:\s*("(?:\\.|[^"\\])*")/g,
+          function (match, str) {
+            return ': <span class="json-string">' + str + '</span>';
+          }
+        ).replace(
+          /:\s*(\d+(?:\.\d+)?)/g,
+          ': <span class="json-number">$1</span>'
+        ).replace(
+          /:\s*(true|false)/g,
+          ': <span class="json-bool">$1</span>'
+        ).replace(
+          /:\s*(null)/g,
+          ': <span class="json-null">$1</span>'
+        ).replace(
+          /([[\]{}])/g,
+          '<span class="json-bracket">$1</span>'
+        );
+      }
+    })();
+  </script>
+
+</body>
+</html>
