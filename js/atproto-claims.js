@@ -31,7 +31,7 @@
 ;(function () {
   'use strict'
 
-  const ATPROTO_API = 'https://public.api.bsky.app'
+  const ATPROTO_API = 'https://bsky.social'
   const COLLECTION = 'com.linkedclaims.claim'
 
   // ── Helpers ──────────────────────────────────────────────

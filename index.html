@@ -9,15 +9,32 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="favicon.svg" alt="LinkedClaims" class="nav-logo">
+        <span>LinkedClaims</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#feed">Live Feed</a>
+        <a href="https://github.com/Cooperation-org/claim-atproto" class="btn btn-nav" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-badge">Open Standard</div>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Open Standard by DIF Labs</div>
       <h1>Linked<span class="highlight">Claims</span></h1>
       <p class="tagline">Decentralized verifiable claims on the AT Protocol</p>
       <p class="description">
@@ -26,8 +43,27 @@
         Built on the <strong>AT Protocol</strong>, no central authority required.
       </p>
       <div class="hero-actions">
-        <a href="https://github.com/nicholasgasior/claim-atproto" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
-        <a href="#about" class="btn btn-secondary">Learn More</a>
+        <a href="https://github.com/Cooperation-org/claim-atproto" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Get Started
+        </a>
+        <a href="#feed" class="btn btn-secondary">View Live Claims</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">ATProto</div>
+          <div class="stat-label">Protocol</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">Any URI</div>
+          <div class="stat-label">Subject</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">Open</div>
+          <div class="stat-label">Standard</div>
+        </div>
       </div>
     </div>
   </section>
@@ -35,71 +71,87 @@
   <!-- What is LinkedClaims -->
   <section class="about" id="about">
     <div class="container">
+      <div class="section-label">Overview</div>
       <h2>What is LinkedClaims?</h2>
-      <p>
-        LinkedClaims is an open specification from
-        <a href="https://identity.foundation/" target="_blank" rel="noopener">DIF Labs</a>
-        for making verifiable claims about any URI-addressable subject. A claim can be about
-        a website, a person (identified by a DID), a credential, or even another claim &mdash;
-        enabling a <strong>web of trust</strong> where endorsements, disputes, and ratings
-        layer on top of each other.
-      </p>
-      <p>
-        Claims are published as records on the
-        <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
-        using the <code>com.linkedclaims.claim</code> lexicon. Every claim gets a persistent URI,
-        is signed by the publisher's ATProto identity, and is readable by anyone via the
-        public API &mdash; no backend or special access required.
-      </p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            LinkedClaims is an open specification from
+            <a href="https://identity.foundation/" target="_blank" rel="noopener">DIF Labs</a>
+            for making verifiable claims about any URI-addressable subject. A claim can be about
+            a website, a person (identified by a DID), a credential, or even another claim &mdash;
+            enabling a <strong>web of trust</strong> where endorsements, disputes, and ratings
+            layer on top of each other.
+          </p>
+          <p>
+            Claims are published as records on the
+            <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
+            using the <code>com.linkedclaims.claim</code> lexicon. Every claim gets a persistent URI,
+            is signed by the publisher's ATProto identity, and is readable by anyone via the
+            public API &mdash; no backend or special access required.
+          </p>
+        </div>
+        <div class="about-visual">
+          <div class="claim-example">
+            <div class="claim-example-header">Example Claim</div>
+            <div class="claim-example-row"><span class="claim-label">type</span><span class="claim-val claim-val-type">endorsement</span></div>
+            <div class="claim-example-row"><span class="claim-label">subject</span><span class="claim-val">did:plc:alice...</span></div>
+            <div class="claim-example-row"><span class="claim-label">statement</span><span class="claim-val">"Excellent contributor to open source"</span></div>
+            <div class="claim-example-row"><span class="claim-label">confidence</span><span class="claim-val">0.95</span></div>
+            <div class="claim-example-row"><span class="claim-label">stars</span><span class="claim-val claim-val-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Key Features -->
-  <section>
+  <section id="features">
     <div class="container">
+      <div class="section-label">Capabilities</div>
       <h2>Key Features</h2>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card feature-cyan">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </div>
           <h3>Claims About Claims</h3>
           <p>Any claim can be the subject of another claim. Endorse, dispute, rate, or supersede existing claims to build a layered web of trust.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-green">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>Multiple Signing Methods</h3>
-          <p>Claims can carry embedded proofs from MetaMask, Ed25519, JWS, or any signature suite &mdash; published on ATProto while preserving the original signer identity.</p>
+          <p>Claims can carry embedded proofs from MetaMask, Ed25519, JWS, or any signature suite &mdash; preserving the original signer identity.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-pink">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
           <h3>Evidence Support</h3>
           <p>Attach photos, videos, documents, or links as evidence. Each item can include a content hash for integrity verification.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-amber">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <h3>Confidence &amp; Ratings</h3>
-          <p>Express how confident you are (0&ndash;1) or give a star rating (1&ndash;5). Aspect tags let you rate specific dimensions like quality or reliability.</p>
+          <p>Express how confident you are (0&ndash;1) or give a star rating (1&ndash;5). Aspect tags let you rate specific dimensions.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-purple">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <h3>Persistent URIs</h3>
           <p>Every claim has a stable <code>claimUri</code> that can be referenced from any system. Claims flow on ATProto but are not exclusive to it.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-teal">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>No Backend Required</h3>
-          <p>Read claims directly from the ATProto public API. Embed the web component on any page &mdash; it works with zero server-side infrastructure.</p>
+          <p>Read claims directly from the ATProto public API. Embed the web component on any page &mdash; zero server-side infrastructure.</p>
         </div>
       </div>
     </div>
@@ -108,8 +160,9 @@
   <!-- Lexicon Schema -->
   <section class="lexicon-section">
     <div class="container">
+      <div class="section-label">Schema</div>
       <h2>Lexicon Schema</h2>
-      <p>The <code>com.linkedclaims.claim</code> lexicon defines the structure of every claim record on ATProto.</p>
+      <p class="section-desc">The <code>com.linkedclaims.claim</code> lexicon defines the structure of every claim record on ATProto.</p>
       <button class="lexicon-toggle" id="lexicon-toggle" aria-expanded="false" aria-controls="lexicon-code">
         <span class="arrow">&#9654;</span>
         View full lexicon schema
@@ -121,10 +174,11 @@
   </section>
 
   <!-- Live Claims Feed -->
-  <section class="feed-section">
+  <section class="feed-section" id="feed">
     <div class="container">
+      <div class="section-label">Live Data</div>
       <h2>Live Claims Feed</h2>
-      <p>Real claims from the LinkedClaims ATProto repository, loaded directly from the public API. Use the search box to filter by subject.</p>
+      <p class="section-desc">Real claims from the LinkedClaims ATProto repository, loaded directly from the public API. Use the search box to filter by subject.</p>
       <linked-claims-atproto
         repo="did:plc:xztctnvt5ycnsippd3orwqk7"
         subject="*"
@@ -134,23 +188,36 @@
   </section>
 
   <!-- Get Started / Resources -->
-  <section>
+  <section class="resources-section">
     <div class="container">
+      <div class="section-label">Resources</div>
       <h2>Get Started</h2>
       <div class="resources-grid">
-        <a class="resource-link" href="https://github.com/nicholasgasior/claim-atproto" target="_blank" rel="noopener">
+        <a class="resource-link" href="https://github.com/Cooperation-org/claim-atproto" target="_blank" rel="noopener">
+          <div class="resource-icon resource-icon-github">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
           <div class="label">claim-atproto SDK</div>
           <div class="desc">TypeScript SDK for publishing and reading LinkedClaims on ATProto.</div>
         </a>
-        <a class="resource-link" href="https://www.npmjs.com/package/claim-atproto" target="_blank" rel="noopener">
-          <div class="label">npm: claim-atproto</div>
-          <div class="desc">Install with <code>npm i claim-atproto</code> and start publishing claims.</div>
+        <a class="resource-link" href="https://www.npmjs.com/package/@cooperation/linkedclaims" target="_blank" rel="noopener">
+          <div class="resource-icon resource-icon-npm">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331z"/></svg>
+          </div>
+          <div class="label">npm: @cooperation/linkedclaims</div>
+          <div class="desc">Install with <code>npm i @cooperation/linkedclaims</code> and start publishing claims.</div>
         </a>
         <a class="resource-link" href="https://live.linkedtrust.us" target="_blank" rel="noopener">
+          <div class="resource-icon resource-icon-lt">
+            <img src="favicon.svg" alt="LinkedTrust" width="24" height="24">
+          </div>
           <div class="label">LinkedTrust</div>
           <div class="desc">Web app for browsing and creating claims with a visual interface.</div>
         </a>
         <a class="resource-link" href="https://identity.foundation/labs-linkedclaims/" target="_blank" rel="noopener">
+          <div class="resource-icon resource-icon-spec">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
           <div class="label">DIF Labs Spec</div>
           <div class="desc">The LinkedClaims specification from the Decentralized Identity Foundation.</div>
         </a>
@@ -167,22 +234,22 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-brand">
-        <svg class="footer-logo" width="24" height="24" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.5,34.29,2,29.39V19.58l8.5-4.9,8.5,4.9v9.81ZM4,28.23,10.5,32,17,28.23V20.74L10.5,17,4,20.74Z" fill="currentColor"/>
-          <path d="M25.5,34.29,17,29.39V19.58l8.5-4.9,8.5,4.9v9.81ZM19,28.23,25.5,32,32,28.23V20.74L25.5,17,19,20.74Z" fill="currentColor"/>
-          <path d="M18,21.32l-8.5-4.9V6.61L18,1.71l8.5,4.9v9.81Zm-6.5-6.06L18,19l6.5-3.75V7.77L18,4,11.5,7.77Z" fill="currentColor"/>
-        </svg>
-        <span>LinkedClaims</span>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="favicon.svg" alt="LinkedClaims" class="footer-logo-img">
+          <span>LinkedClaims</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/Cooperation-org/claim-atproto" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.npmjs.com/package/@cooperation/linkedclaims" target="_blank" rel="noopener">npm</a>
+          <a href="https://live.linkedtrust.us" target="_blank" rel="noopener">LinkedTrust</a>
+          <a href="https://identity.foundation/labs-linkedclaims/" target="_blank" rel="noopener">DIF Labs Spec</a>
+          <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
+        </div>
       </div>
-      <div class="links">
-        <a href="https://github.com/nicholasgasior/claim-atproto" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.npmjs.com/package/claim-atproto" target="_blank" rel="noopener">npm</a>
-        <a href="https://live.linkedtrust.us" target="_blank" rel="noopener">LinkedTrust</a>
-        <a href="https://identity.foundation/labs-linkedclaims/" target="_blank" rel="noopener">DIF Labs Spec</a>
-        <a href="https://atproto.com/" target="_blank" rel="noopener">AT Protocol</a>
+      <div class="footer-bottom">
+        <p>&copy; 2023&ndash;2026 LinkedClaims contributors. Open source under MIT license.</p>
       </div>
-      <p>&copy; 2025 LinkedClaims contributors. Open source under MIT license.</p>
     </div>
   </footer>
 
